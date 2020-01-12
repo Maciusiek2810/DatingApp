@@ -16,12 +16,12 @@ namespace DatingApp.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthRepository repo;
-        private readonly IConfiguration config;
+        private readonly IAuthRepository _repo;
+        private readonly IConfiguration _config;
         public AuthController(IAuthRepository repo, IConfiguration config)
         {
-            this.config = config;
-            this.repo = repo;
+            _config = config;
+            _repo = repo;
         }
 
         [HttpPost("register")]
@@ -29,17 +29,15 @@ namespace DatingApp.API.Controllers
         {
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
-            if (await this.repo.UserExists(userForRegisterDto.Username))
-            {
+            if (await _repo.UserExists(userForRegisterDto.Username))
                 return BadRequest("User already exists");
-            }
 
             var userToCreate = new User
             {
                 Username = userForRegisterDto.Username
             };
 
-            var createdUser = await this.repo.Register(userToCreate, userForRegisterDto.Password);
+            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
             return StatusCode(201);
         }
@@ -47,7 +45,7 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
-            var userFromRepo = await repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
+            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if (userFromRepo == null)
                 return Unauthorized();
@@ -57,7 +55,7 @@ namespace DatingApp.API.Controllers
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
             };
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetSection("AppSettings:Token").Value));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
