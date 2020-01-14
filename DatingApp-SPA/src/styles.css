@@ -6,3 +6,5 @@
 @import '../node_modules/bootswatch/dist/united/bootstrap.min.css';
 
 .bg-dark{background-color:#343a40 !important}
+.btn-primary, .btn-info{background-color: #8d9194; border-color: #8d9194;}
+.btn-success:disabled, .btn-success:not(:disabled){background-color: #ffcc00; border-color: #ffcc00;}

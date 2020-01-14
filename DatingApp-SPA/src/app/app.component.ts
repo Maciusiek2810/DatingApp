@@ -8,14 +8,13 @@ import { AuthService } from './_services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Centrum Opisowe Radiologii Stomatologicznej';
   jwtHelper = new JwtHelperService();
 
   constructor(private authService: AuthService){}
 
-  ngOnInit(){
+  ngOnInit() {
     const token = localStorage.getItem('token');
-    if (token){
+    if (token) {
       this.authService.decodedToken = this.jwtHelper.decodeToken(token);
     }
   }

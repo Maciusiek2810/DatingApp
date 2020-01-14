@@ -1,9 +1,16 @@
 <div class="container mt-5">
   <div *ngIf="!registerMode" style="text-align: center">
-    <h1>RTG, tomografie i CBCT</h1>
-    <p class="lead">Prześlij zdjęcie do opisu - przejdź do rejestracji i stwórz konto</p>
+    <div style="text-align: center">
+      <h1>{{ title }}</h1>
+    </div>
+    <h2>RTG, tomografie i CBCT</h2>
+    <p class="lead">
+      Prześlij zdjęcie do opisu - przejdź do rejestracji i stwórz konto
+    </p>
     <div class="text-center">
-      <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Rejestracja</button>
+      <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">
+        Rejestracja
+      </button>
       <button class="btn btn-info btn-lg">O nas</button>
       <!-- <button class="btn btn-info btn-lg">Więcej</button> -->
     </div>
@@ -12,7 +19,9 @@
   <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
-        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+        <app-register
+          (cancelRegister)="cancelRegisterMode($event)"
+        ></app-register>
       </div>
     </div>
   </div>
