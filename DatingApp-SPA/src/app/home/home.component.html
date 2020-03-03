@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div *ngIf="!registerMode" style="text-align: center">
+  <div *ngIf="!registerMode && !aboutMode" style="text-align: center">
     <div style="text-align: center">
       <h1>{{ title }}</h1>
     </div>
@@ -11,7 +11,7 @@
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">
         Rejestracja
       </button>
-      <button class="btn btn-info btn-lg">O nas</button>
+      <button class="btn btn-info btn-lg" (click)="aboutToggle()">O nas</button>
       <!-- <button class="btn btn-info btn-lg">Więcej</button> -->
     </div>
   </div>
@@ -22,6 +22,19 @@
         <app-register
           (cancelRegister)="cancelRegisterMode($event)"
         ></app-register>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="aboutMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <p class="lead">
+          Jesteśmy zajebiści
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div class="form-group text-center">
+          <button class="btn btn-default" type="button" (click)="cancel()">Powrót</button>
+        </div>
       </div>
     </div>
   </div>

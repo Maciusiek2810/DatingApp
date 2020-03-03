@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   title = 'Centrum Opisowe Radiologii Stomatologicznej';
   registerMode = false;
+  aboutMode = false;
   values: any;
   constructor(private http: HttpClient) { }
 
@@ -18,6 +19,14 @@ export class HomeComponent implements OnInit {
 
   registerToggle() {
     this.registerMode = true;
+  }
+
+  aboutToggle() {
+    this.aboutMode = true;
+  }
+
+  cancel(){
+    this.aboutMode = false;
   }
 
   // getValues() {

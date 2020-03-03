@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
       <div class="col-md-6 offset-md-3">
           <h3>Wybierz pliki do przesłania</h3>            
           <div class="form-group">
-              <input type="file" name="image" (change)="fileProgress($event)" />
+              <input type="file" name="file" (change)="fileProgress($event)" />
           </div>
           <div *ngIf="fileUploadProgress">
               Przesyłanie w toku: {{ fileUploadProgress }}

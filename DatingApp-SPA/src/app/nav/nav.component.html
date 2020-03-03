@@ -3,14 +3,16 @@
     <img src="assets/cors.png">
   </a>
 
-  <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
+  <!-- <ul *ngIf="loggedIn()" class="navbar-nav mr-auto"> -->
+  <ul class="navbar-nav mr-auto">
+
     <!-- <li class="nav-item active"><a class="nav-link" href="#">Matches</a></li>  
     <li class="nav-item"><a class="nav-link" href="#">Lists</a></li>
     <li class="nav-item"><a class="nav-link disabled" href="#">Messages</a></li> -->
-    <li class="nav-item"><a class="nav-link" [routerLink]="['/members']" routerLinkActive="router-link-active" >Użytkownicy</a></li>  
-    <li class="nav-item"><a class="nav-link" [routerLink]="['/prices']" routerLinkActive="router-link-active" >Cennik</a></li>
-    <li class="nav-item"><a class="nav-link" [routerLink]="['/messages']" routerLinkActive="router-link-active" >Wiadomości</a></li>
-    <li class="nav-item"><a class="nav-link" [routerLink]="['/lists']" routerLinkActive="router-link-active" >Prześlij badanie</a></li>
+    <li *ngIf="loggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/members']" routerLinkActive="router-link-active" >Użytkownicy</a></li>  
+    <!-- <li class="nav-item"><a class="nav-link" [routerLink]="['/prices']" routerLinkActive="router-link-active" >Cennik</a></li> -->
+    <!-- <li class="nav-item"><a class="nav-link" [routerLink]="['/messages']" routerLinkActive="router-link-active" >Wiadomości</a></li> -->
+    <li *ngIf="loggedIn()" class="nav-item"><a class="nav-link" [routerLink]="['/lists']" routerLinkActive="router-link-active" >Prześlij badanie</a></li>
     <li class="nav-item"><a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active" >Kontakt</a></li>
   </ul>
 

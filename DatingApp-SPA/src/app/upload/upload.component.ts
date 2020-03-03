@@ -39,10 +39,11 @@ export class UploadComponent implements OnInit {
     formData.append('files', this.fileData);
 
     this.fileUploadProgress = '0%';
-
+// baseUrl = 'http://localhost:5000/api/auth/';
     this.http
       .post(
-        'https://us-central1-tutorial-e6ea7.cloudfunctions.net/fileUpload',
+        // 'https://us-central1-tutorial-e6ea7.cloudfunctions.net/fileUpload',
+        'http://localhost:5000/api/upload/upload',
         formData,
         {
           reportProgress: true,
