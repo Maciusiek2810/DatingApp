@@ -3,13 +3,13 @@
     <div class="col-sm-4">
       <h1>{{user.username}} profil</h1>
       <div class="card">
-        <img src="{{ user.photoUrl }}" alt="{{ user.username }}" class="card-img-top img-thumbnail">
+        <img src="{{ user.photoUrl || '../../../assets/user.png'}}" alt="{{ user.username }}" class="card-img-top img-thumbnail">
         <div class="card-body">
-          <!-- <div>
-            <strong>Location:</strong>
-            <p>{{ user.city}},{{ user.country}}</p>
-          </div>
           <div>
+            <strong>Location:</strong>
+            <p>{{user.postalCode}},{{ user.city}},{{ user.street}}</p>
+          </div>
+          <!-- <div>
             <strong>Age:</strong>
             <p>{{ user.age}}</p>
           </div> -->
@@ -34,15 +34,19 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="About {{user.username}}">
-            <h4>Description</h4>
+            <!-- <h4>Description</h4> -->
             <!-- <p>{{ user.introduction }}</p> -->
-            <h4>Looking For</h4>
+            <h4>Adres e-mail</h4>
+            <p>{{user.email}}</p>
+            <!-- <h4>Looking For</h4> -->
             <!-- <p>{{ user.introduction }}</p> -->
+            <h4>Numer telefonu</h4>
+            <p>{{ user.phoneNumber }}</p>
           </tab>
-          <tab heading="Interests">
+          <!-- <tab heading="Interests">
             <h4>Interests</h4>
-            <!-- <p>{{ user.interests }}</p> -->
-          </tab>
+            <p>{{ user.interests }}</p>
+          </tab> -->
           <tab heading="Photos">
             <p>Photos will go here</p>
           </tab>

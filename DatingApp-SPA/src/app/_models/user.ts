@@ -9,12 +9,15 @@ export interface User {
   lastActive: Date;
   photoUrl: string;
   photos?: Photo[];
-  // knownAs: string;
-  // age: number;
-  // gender: string;
-  // city: string;
+  city: string;
+  street: string;
+  phoneNumber: string;
+  postalCode: number;
   // country: string;
   // interests?: string;
   // introduction?: string;
   // lookingFor?: string;
+  // knownAs: string;
+  // age: number;
+  // gender: string;
 }

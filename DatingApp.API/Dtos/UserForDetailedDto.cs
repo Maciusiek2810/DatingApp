@@ -10,7 +10,10 @@ namespace DatingApp.API.Dtos
         public string Username { get; set; }
         public string PhotoUrl { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Phone { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public int PostalCode { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public ICollection<PhotosForDetailedDto> Photos { get; set; }
@@ -20,7 +23,6 @@ namespace DatingApp.API.Dtos
         // public string LookingFor { get; set; }
         // public string Interests { get; set; }
         // public string Country { get; set; }
-        // public string City { get; set; }
         // public int Age { get; set; }
     }
 }

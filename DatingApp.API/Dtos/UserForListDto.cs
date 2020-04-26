@@ -10,7 +10,7 @@ namespace DatingApp.API.Dtos
         public string Username { get; set; }
         public string PhotoUrl {get;set;}
         public string Email { get; set; }
-        // public string PhoneNumber { get; set; }
+        public string Phone { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public ICollection<Photo> Photos { get; set; }
