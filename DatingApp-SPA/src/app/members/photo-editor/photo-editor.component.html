@@ -1,8 +1,13 @@
 <div class="row">
   <div class="col-sm-2" *ngFor="let photo of photos">
-    <img src="{{photo.url}}" alt="" class="img-thumbnail p-1">
+    <!-- <img  href='assets/favicon.ico'> -->
+    <!-- <i class="fa fa-file"></i> -->
+    <!-- <i *ngIf="uploader._fileTypeFilter('pdf')" class="fa fa-file"></i> -->
+    <!-- <img *ngIf="uploader._fileTypeFilter('pdf')" alt="" class="fa fa-file text-center"> -->
+    <img src="{{photo.url}}" alt="" class="img-thumbnail p-1 fa fa-file fa-5x text-center p-3">
+    <!-- <img src="fas fa-file-pdf" alt="" class="img-thumbnail p-1"> -->
     <div class="text-center">
-      <p>{{photo.dateAdded}}</p>
+      <p>{{photo.dateAdded | date:'short'}}</p>
       <!-- <button type="button" class="btn btn-sm" (click)="setMainPhoto(photo)"
         [ngClass]="photo.isMain? 'btn-success active':'btn-secondary'" [disabled]="photo.isMain">Główne</button>
       <button type="button" class="btn btn-sm btn-danger" (click)="deletePhoto(photo.id)" [disabled] = "photo.isMain">
@@ -23,6 +28,7 @@
            [uploader]="uploader"
            class="card bg-faded p-3 text-center mb-3 my-drop-zone">
            <i class="fa fa-upload fa-3x"></i>
+           <!-- <i class="fa fa-file-pdf"></i> -->
           Drop Files Here
       </div>
 

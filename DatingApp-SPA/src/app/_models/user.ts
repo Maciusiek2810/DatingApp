@@ -11,7 +11,7 @@ export interface User {
   photos?: Photo[];
   city: string;
   street: string;
-  phoneNumber: string;
+  phone: string;
   postalCode: number;
   // country: string;
   // interests?: string;

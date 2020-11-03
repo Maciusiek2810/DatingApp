@@ -33,3 +33,8 @@
 .animate{
     transition: all 0.3s ease-in-out;
 }
+
+/* .card-img-top{
+    box-sizing: border-box 148px x 148px;
+    box-sizing: content-box 148px x 148px;
+} */

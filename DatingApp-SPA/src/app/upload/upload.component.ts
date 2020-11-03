@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-upload',
@@ -34,6 +35,10 @@ export class UploadComponent implements OnInit {
     };
   }
 
+  onClear() {
+    this.previewUrl = null;
+    this.fileProgress(null);
+  }
   onSubmit() {
     const formData = new FormData();
     formData.append('files', this.fileData);

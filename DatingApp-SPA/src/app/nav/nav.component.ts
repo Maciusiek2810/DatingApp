@@ -22,7 +22,7 @@ export class NavComponent implements OnInit {
         this.alertify.success('Użytkownik zalogowany');
       },
       error => {
-        this.alertify.error(error);
+        this.alertify.error('błędny login lub hasło');
       }, () => {
         this.router.navigate(['/members']);
       }
